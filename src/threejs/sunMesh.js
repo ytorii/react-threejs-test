@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import sunmap from '../imgs/sunmap.jpg'
 
 // 球体
-const geometry = new THREE.SphereGeometry(2, 20, 20)
+const geometry = new THREE.SphereGeometry(5, 20, 20)
 
 // 画像を読み込む
 const loader = new THREE.TextureLoader();
