@@ -15,8 +15,9 @@ const geometry = new THREE.BoxGeometry(400, 400, 400)
 const material = new THREE.MeshNormalMaterial()
 
 const mesh = new THREE.Mesh(geometry, material)
+const meshes = [ mesh ]
 
-const onTick = mesh => {
+const onTick = () => {
   mesh.rotation.y += 0.01
   mesh.rotation.x += 0.01
 }
@@ -27,7 +28,7 @@ const MaterialBox = ({id, width, height}) => (
     width={width}
     height={height}
     camera={generateCamera(45, width / height)}
-    mesh={mesh}
+    meshes={meshes}
     matial={material}
     onTick={onTick}
   />

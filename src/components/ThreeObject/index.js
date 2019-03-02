@@ -18,8 +18,9 @@ const ThreeObject = props => {
     width,
     height,
     camera,
-    mesh,
+    meshes,
     light,
+    lightHelper,
     onTick,
   } = props
 
@@ -31,9 +32,14 @@ const ThreeObject = props => {
     // シーンを作成
     const scene = new THREE.Scene()
 
-    scene.add(mesh)
+    meshes.forEach(mesh => { scene.add(mesh) })
 
     light && scene.add(light)
+    lightHelper && scene.add(lightHelper)
+
+    // 環境光で全体を明るく
+    const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.6);
+    scene.add(ambientLight);
 
     // カメラコントローラーを作成
     const controls = new OrbitControls(camera, renderer.domElement)
@@ -44,6 +50,8 @@ const ThreeObject = props => {
 
       // 与えられたアニメーション処理を実行
       onTick()
+
+      lightHelper && lightHelper.update()
 
       // レンダリング
       renderer.render(scene, camera)

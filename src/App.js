@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import MaterialBox from './components/MaterialBox';
-import MaterialSphere from './components/MaterialSphere';
+import TorusKnot from './components/TorusKnot';
 
 import './App.css';
 
@@ -8,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MaterialSphere id="threejs-material" width="640" height="540" />
+        <TorusKnot id="torus-knot" width="960" height="540" />
       </div>
     );
   }
