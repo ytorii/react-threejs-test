@@ -6,7 +6,8 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
-    "three": "^0.102.0"
+    "three": "^0.102.0",
+    "three-orbitcontrols-ts": "^0.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

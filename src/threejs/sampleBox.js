@@ -1,19 +1,23 @@
 import * as THREE from 'three'
 
-export const renderBox = canvasId => {
-  // サイズを指定
-  const width = 960
-  const height = 540
+// サイズを指定
+const width = 960
+const height = 540
 
-  // レンダラーを作成
-  const renderer = new THREE.WebGLRenderer({
+// シーンを作成
+const scene = new THREE.Scene()
+
+// レンダラーを作成
+const generateRenderer = canvasId => (
+  new THREE.WebGLRenderer({
     canvas: document.querySelector(`#${canvasId}`)
-  });
+  })
+)
+
+export const renderBox = canvasId => {
+  const renderer = generateRenderer(canvasId)
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setSize(width, height)
-
-  // シーンを作成
-  const scene = new THREE.Scene()
 
   // カメラを作成
   const camera = new THREE.PerspectiveCamera(45, width / height)
