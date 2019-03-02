@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TorusKnot id="torus-knot" width="960" height="540" />
+        <TorusKnot id="torus-knot" width="960" height="640" />
       </div>
     );
   }
